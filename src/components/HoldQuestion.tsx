@@ -8,13 +8,13 @@ type Props = {
 export const HoldQuestion: React.FC<Props> = ({ question }) => {
 
     return (
-        <>
-            <Box sx={{ padding: 2, border: '1px solid #ddd', borderRadius: '4px' }}>
-                <Typography sx={{ fontSize: '1.2rem', color: 'gray' }}>
+        <div className='w-full sm:w-[600px]'>
+            <Box sx={{ padding: 2, border: '1px solid #ddd', borderRadius: '4px', bgcolor: '#225f86' }}>
+                <Typography sx={{ fontSize: '1.2rem', color: '#fc7716' }}>
                     {question}
                 </Typography>
             </Box>
-        </>
+        </div>
     )
 
 }
