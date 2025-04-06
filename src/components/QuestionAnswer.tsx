@@ -26,7 +26,7 @@ export const QuestionAnswer: React.FC = () => {
 
     return (
         <div className="p-2 m-2 w-full sm:w-[600px] mx-auto flex flex-col items-center justify-center space-y-2">
-            <img src="/Logo-color@1x.svg" />
+            <img src="/Logo-color@1x.svg" alt='logo'/>
             {!question ?
             <QuestionForm setQuestion={setQuestion} /> :
             <HoldQuestion question={question} />

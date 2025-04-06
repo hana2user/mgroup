@@ -31,7 +31,7 @@ export const CheckEnter: React.FC<Props> = ({ setCheck }) => {
 
     return (
         <div className='w-full sm:w-[600px] mx-auto flex flex-col items-center justify-center space-y-4'>
-            <img src="/Logo-color@1x.svg" />
+            <img src="/Logo-color@1x.svg" alt='logo' />
             <FormControl>
                 <FormLabel id="demo-row-radio-buttons-group-label">Which company does this logo represent?</FormLabel>
                 <RadioGroup
