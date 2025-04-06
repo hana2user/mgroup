@@ -1,13 +1,11 @@
 import React from 'react'; 
 import './App.css';
-import { CheckEnter } from './components/CheckEnter';
-import { QuestionAnswer } from './components/QuestionAnswer';
+import { CheckMenu } from './components/CheckMenu';
 
 function App() {
   return (
     <div className="App">
-      <CheckEnter />
-      <QuestionAnswer />
+      <CheckMenu />
     </div>
   );
 }
