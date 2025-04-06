@@ -1,3 +1,4 @@
+import React from 'react'; 
 import './App.css';
 import { CheckEnter } from './components/CheckEnter';
 import { QuestionAnswer } from './components/QuestionAnswer';

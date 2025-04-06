@@ -1,3 +1,4 @@
+import React from 'react'; 
 import { Box, Typography } from "@mui/material";
 
 type Props = {
@@ -16,7 +17,6 @@ export const Answer: React.FC<Props> = ({ answer }) => {
                 </Typography>
 
             </Box>
-            <div>{answer}</div>
         </>
     )
 }

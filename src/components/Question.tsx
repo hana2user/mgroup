@@ -1,3 +1,4 @@
+import React from 'react'; 
 import { TextareaForm } from "./TextareaForm";
 
 type Props = {

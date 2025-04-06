@@ -1,3 +1,4 @@
+import React from 'react'; 
 import { useEffect, useState } from "react";
 import { Answer } from "./Answer";
 import { Question } from "./Question";
@@ -12,7 +13,7 @@ export const QuestionAnswer: React.FC = () => {
     useEffect(() => {
 
         const resFetch = async () => {            
-                const resFetch = await fetchServer({ question });
+                const resFetch = await fetchServer(question);
                 const resText = await resFetch.text();
                 setAnswer(resText);
             };
@@ -23,7 +24,7 @@ export const QuestionAnswer: React.FC = () => {
 
     return (
         <>
-            {question === '' ?
+            {!question ?
             <Question question={question} setQuestion={setQuestion} /> :
             <HoldQuestion question={question} />
             }

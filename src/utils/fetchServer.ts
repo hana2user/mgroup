@@ -1,10 +1,6 @@
-type Props = {
-    question: String;
-}
-
 const server = 'https://mgroup-botai.onrender.com/content';
 
-export const fetchServer = async ({ question }: Props): Promise<Response> => {
+export const fetchServer = async (question: string): Promise<Response> => {
 
     try {
         if (!question.trim()) {
@@ -15,15 +11,16 @@ export const fetchServer = async ({ question }: Props): Promise<Response> => {
             "Content-Type": "application/json",
         };
         const raw = JSON.stringify({
-            "message": {question}
+            "message": question
           });
         const requestOptions = {
-            method: "GET",
+            method: "POST",
             headers: myHeaders,
             body: raw,
             redirect: "follow" as RequestRedirect
           };
        
+          console.log(server, requestOptions);
         const response = await fetch(server, requestOptions);
         if (!response.ok) {
             const errorText = await response.text();
