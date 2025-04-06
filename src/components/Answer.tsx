@@ -1,12 +1,22 @@
+import { Box, Typography } from "@mui/material";
+
 type Props = {
-    answer: String;
+    answer: string;
 }
 
-export const Answer: React.FC<Props> = ({answer}) => {
+export const Answer: React.FC<Props> = ({ answer }) => {
 
     return (
         <>
-        <div>{answer}</div>
+            <Box
+                sx={{ padding: 2, border: '1px solid #ddd', borderRadius: '4px' }}
+            >
+                <Typography sx={{ fontSize: '1.2rem', color: 'blue' }}>
+                    {answer}
+                </Typography>
+
+            </Box>
+            <div>{answer}</div>
         </>
     )
 }
