@@ -31,7 +31,8 @@ export const QuestionAnswer: React.FC = () => {
             }
             if (lastJsonMessage.system) {
                 console.log(lastJsonMessage.system);
-              setAnswer(prev => prev + '\n[Server]: ' + lastJsonMessage.system);
+                const time = new Date();
+                setAnswer(prev => prev + '\n[Server]: ' + time.toLocaleTimeString() + ' - ' + lastJsonMessage.system);
             }
             if (lastJsonMessage.error) {
               setAnswer('[Error]: ' + lastJsonMessage.error);

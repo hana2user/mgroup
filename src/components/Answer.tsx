@@ -25,8 +25,7 @@ export const Answer: React.FC<AnswerProps> = ({ answer }) => {
                     const isServerMessage = original.startsWith('[Server]');
                     let p = original;
                     if( isServerMessage ) {
-                        const time = new Date();
-                        p = p.replace('[Server]: ', time.toLocaleTimeString() + ' - ');
+                        p = p.replace('[Server]: ', ' - ');
                         }
                 return <Typography 
                     sx={{ 
