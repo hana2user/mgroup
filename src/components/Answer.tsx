@@ -13,7 +13,7 @@ export const Answer: React.FC<AnswerProps> = ({ answer }) => {
         const parsedAnswer = JSON.parse(answer);
         paragraphs = parsedAnswer.content.split('\n');
     } catch (e) {  
-        paragraphs = [answer];
+        paragraphs = answer.split('\n');
     }
 
     return (
@@ -21,11 +21,17 @@ export const Answer: React.FC<AnswerProps> = ({ answer }) => {
             <Box
                 sx={{ padding: 2, border: '1px solid #ddd', borderRadius: '4px', backgroundColor: '#fc7716' }}
             > 
-                {paragraphs.map((p: string, i: number) => {
+                {paragraphs.map((original: string, i: number) => {
+                    const isServerMessage = original.startsWith('[Server]');
+                    let p = original;
+                    if( isServerMessage ) {
+                        const time = new Date();
+                        p = p.replace('[Server]: ', time.toLocaleTimeString() + ' - ');
+                        }
                 return <Typography 
                     sx={{ 
                         fontSize: '1rem', 
-                        color: '#225f86', 
+                        color: isServerMessage? '#ffffff' : '#225f86', 
                         textAlign: 'justify',
                         textIndent: '2em',
                         }}

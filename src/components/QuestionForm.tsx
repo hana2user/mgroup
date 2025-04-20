@@ -4,18 +4,18 @@ import { Alert, Button } from '@mui/material';
 import { useState } from 'react';
 
 type Props = {
-  setQuestion: (s: string) => void;
+  onAsk: (question: string) => void;
 }
 
-export const QuestionForm: React.FC<Props> = ({setQuestion}) => {
+export const QuestionForm: React.FC<Props> = ({ onAsk }) => {
     const [value, setValue] = useState<string>('');
     const [alert, setAlert] = useState<boolean>(false);
 
-    function setQuestionValue() {
+    function handleClick() {
       if(value == null || value === '') {
         setAlert(true);
       } else {
-        setQuestion(value);
+        onAsk(value);
       }
         
     }
@@ -45,7 +45,7 @@ export const QuestionForm: React.FC<Props> = ({setQuestion}) => {
       style={{ 
         width: 200,
       }}
-      onClick={setQuestionValue}>
+      onClick={handleClick}>
         Ask about
       </Button>
     }
